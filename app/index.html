@@ -18,15 +18,22 @@
     </script>
   </head>
   <body style="-webkit-app-region: drag" class="grey darken-4">
-    <div id="titlebar" class="grey darken-3 valign-wrapper" style="text-align: right;" align="right">
-      <ul class="right"><li>
-        <button class="waves-effect waves-light btn transparent z-depth-0 valign" onclick="closeWindow();"><i class="fa fa-cog fa-2x white-text"></i></button>
-        <button class="waves-effect waves-light btn transparent z-depth-0 valign" onclick="minWindow();"><i class="fa fa-window-minimize fa-2x white-text"></i></button>
-        <button class="waves-effect waves-red btn transparent z-depth-0 valign" onclick="closeWindow();"><i class="fa fa-window-close fa-2x red-text"></i></button>
-      </li></ul>
-    </div>
-    <div id="keyboard">
+    <div id="window">
+      <div id="titlebar" class="grey darken-3 valign-wrapper" style="text-align: right;" align="right">
+        <ul class="right"><li>
+          <button class="waves-effect waves-light btn transparent z-depth-0 valign" onclick="dropdownSettings();"><i class="fa fa-cog fa-2x white-text"></i></button>
+          <button class="waves-effect waves-light btn transparent z-depth-0 valign" onclick="minWindow();"><i class="fa fa-window-minimize fa-2x white-text"></i></button>
+          <button class="waves-effect waves-red btn transparent z-depth-0 valign" onclick="closeWindow();"><i class="fa fa-window-close fa-2x red-text"></i></button>
+        </li></ul>
+      </div>
+      <div class="container">
+        <div class="input-field col s12">
+          <textarea id="textarea" class="materialize-textarea"></textarea>
+        </div>
+      </div>
+      <div id="keyboard">
 
+      </div>
     </div>
 
   </body>

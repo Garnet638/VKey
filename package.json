@@ -1,8 +1,8 @@
 {
-  "name": "Dimensional Rift",
-  "version": "0.1.0",
+  "name": "VKey",
+  "version": "0.1.1",
   "main": "index.js",
   "dependencies": {
-    "pixi.js": "^4.5.3"
+
   }
 }

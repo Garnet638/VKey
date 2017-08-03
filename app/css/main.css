@@ -8,8 +8,25 @@ button {
   height: 40px;
 }
 .key {
-  width: 25px;
+  width: 50px;
   height: 60px;
+  float: left;
+  background-color: #414141;
+  margin: 5px;
+  vertical-align: middle;
+  text-align: center;
+}
+.special {
+  width: 100px;
+}
+.uppercase {
+  display: none;
+}
+.ctrl {
+  display: none;
+}
+.keyboardRow {
+  overflow: hidden;
 }
 #keyboard {
   display: none;
