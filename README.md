@@ -1,6 +1,6 @@
 # VKey
 ### The best Virtual Keyboard solution
-Current version: 1.0.0
+Current version: 1.0.1
 
 ## Introduction
 VKey is a free, open source virtual keyboard. VKey allows users to have an
