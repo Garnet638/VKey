@@ -15,6 +15,7 @@ button {
   margin: 5px;
   vertical-align: middle;
   text-align: center;
+  -webkit-app-region: no-drag;
 }
 .special {
   width: 100px;
@@ -22,14 +23,27 @@ button {
 .uppercase {
   display: none;
 }
-.ctrl {
+.ctrlk {
   display: none;
 }
-.keyboardRow {
-  overflow: hidden;
+.altk {
+  display: none;
 }
 #keyboard {
   display: none;
+  padding: 0px;
+  float: none;
+  text-align: center;
+}
+#keyboardRowContainer {
+  padding: 0px;
+  display: inline-block;
+}
+.keyboardRow {
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 10000px;
+  display: inline-block
 }
 .btn {
   float:right;
@@ -42,4 +56,21 @@ button {
     right: 0;
 
     margin: auto;
+}
+
+.spacebar{
+  width: 300px;
+}
+
+.backspace{
+  width: 150px;
+}
+
+#textarea{
+  -webkit-app-region: no-drag;
+  font-size: 30px;
+  height: 90px;
+  min-height: 90px;
+  max-height: 90px;
+  overflow-y: scroll;
 }
