@@ -22,25 +22,31 @@ body {
 }
 .special {
   width: 100px;
+  -webkit-app-region: no-drag;
 }
 .uppercase {
   display: none;
+  -webkit-app-region: no-drag;
 }
 .ctrlk {
   display: none;
+  -webkit-app-region: no-drag;
 }
 .altk {
   display: none;
+  -webkit-app-region: no-drag;
 }
 #keyboard {
   display: none;
   padding: 0px;
   float: none;
   text-align: center;
+  -webkit-app-region: no-drag;
 }
 #keyboardRowContainer {
   padding: 0px;
   display: inline-block;
+  -webkit-app-region: no-drag;
 }
 .keyboardRow {
   overflow: hidden;
@@ -60,16 +66,21 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-
     margin: auto;
+}
+
+.dropdown-content{
+  -webkit-app-region: no-drag;
 }
 
 .spacebar{
   width: 300px;
+  -webkit-app-region: no-drag;
 }
 
 .backspace{
   width: 150px;
+  -webkit-app-region: no-drag;
 }
 
 #textarea{
