@@ -33,12 +33,36 @@ var shortcutKeys = new Map([
 
 //Get a list of all keyboards in /keyboards
 function getKeyboards(){
+  dropdownhtml = ''
   fs.readdirSync(path.join(__dirname, '..', 'keyboards')).forEach(file => {
-    console.log(file);
+    if (path.extname(file) == '.json'){
+      let keyboardJS = require(path.join(__dirname, '..', 'keyboards', file));
+      dropdownhtml += '<li><a href="#!" onclick="loadKeyboard(\'' + file.split(".")[0] + '\');$(\'.dropdown-button\').dropdown(\'close\');">' + keyboardJS["attributes"]["name"] + '</a></li>';
+    }
   })
 
-  //Placeholder, will eventually do something to change it
-  loadKeyboard('hy');
+  $('#settingsDropdown').html(dropdownhtml);
+
+
+  $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: false, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+
+  try{
+    loadKeyboard('en-us');
+  }
+  catch(e){
+    $('#keyboard').slideUp(0);
+    $('#error').slideDown(0);
+  }
 }
 
 //Load keys
@@ -90,15 +114,15 @@ function loadKeyboard(keyboard){
             break;
 
           case '{bksp}':
-            keyBoardHTML += '<div class="key special bksp waves-effect waves-light" onclick="backspace()"><p class="flow-text white-text">Backspace</p></div>';
+            keyBoardHTML += '<div class="key special backspace waves-effect waves-light" onclick="backspace()"><p class="flow-text white-text">Backspace</p></div>';
             break;
 
           case '{enter}':
-            keyBoardHTML += '<div class="key special bksp waves-effect waves-light" onclick="pressKey(\'\n\')"><p class="flow-text white-text">Enter</p></div>';
+            keyBoardHTML += '<div class="key special enter waves-effect waves-light" onclick="pressKey(\'\\n\')"><p class="flow-text white-text">Enter</p></div>';
             break;
 
           case '{space}':
-            keyBoardHTML += '<div class="key special bksp waves-effect waves-light" onclick="pressKey(\' \')"><p class="flow-text white-text"> </p></div>';
+            keyBoardHTML += '<div class="key special spacebar waves-effect waves-light" onclick="pressKey(\' \')"><p class="flow-text white-text"> </p></div>';
             break;
         }
       }
@@ -143,6 +167,7 @@ function loadKeyboard(keyboard){
   keyBoardHTML += '</ul>';
 
   $('#keyboard').html(keyBoardHTML);
+  $('#error').slideUp(0);
   $('.key').slideUp(0);
   $('.special').slideDown(0);
   $('.lowercase').slideDown(0);
@@ -155,11 +180,25 @@ function loadKeyboard(keyboard){
 
 function pressKey(key){
   $('#textarea').val($('#textarea').val() + key);
-  if (mod == 1){mod = 0;}
+  if (mod == 1){
+    mod = 0;
+    $('.key').slideUp(0);
+    $('.special').slideDown(0);
+    $('.lowercase').slideDown(0);
+  }
 }
 
 function backspace(){
   $('#textarea').val($('#textarea').val().substring(0, $('#textarea').val().length-1));
+}
+
+function copyText(){
+  $('#textarea').select();
+  document.execCommand('copy');
+}
+
+function clearText(){
+  $('#textarea').val('');
 }
 
 //Shift and caps lock
@@ -208,7 +247,6 @@ function ctrl(){
   }
 
 }
-
 
 //Alt
 function alt(){

@@ -21,15 +21,29 @@
     <div id="window">
       <div id="titlebar" class="grey darken-3 valign-wrapper" style="text-align: right;" align="right">
         <ul class="right"><li>
-          <button class="waves-effect waves-light btn transparent z-depth-0 valign" onclick="dropdownSettings();"><i class="fa fa-cog fa-2x white-text"></i></button>
+          <button class="dropdown-button waves-effect waves-light btn transparent z-depth-0 valign" data-activates="settingsDropdown"><i class="fa fa-cog fa-2x white-text"></i></button>
           <button class="waves-effect waves-light btn transparent z-depth-0 valign" onclick="minWindow();"><i class="fa fa-window-minimize fa-2x white-text"></i></button>
           <button class="waves-effect waves-red btn transparent z-depth-0 valign" onclick="closeWindow();"><i class="fa fa-window-close fa-2x red-text"></i></button>
         </li></ul>
       </div>
+
+      <ul id='settingsDropdown' class='dropdown-content'>
+
+      </ul>
+
+      <div class="container valign-wrapper" id="error">
+        <div class="valign col s12 center-align">
+          <h1 class="white-text">Welcome!</h1>
+          <p class="flow-text white-text">Click the gear on the top left corner to select a keyboard</p>
+        </div>
+      </div>
+
       <div class="container">
         <div class="input-field col s12">
           <textarea id="textarea" class="materialize-textarea flow-text white-text"></textarea>
         </div>
+        <button class="waves-effect waves-light btn z-depth-0 valign" onclick="clearText();">Clear text</button>
+        <button class="waves-effect waves-light btn z-depth-0 valign" onclick="copyText();">Copy text</button>
       </div>
       <div id="keyboard">
 

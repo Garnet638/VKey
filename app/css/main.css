@@ -1,6 +1,9 @@
 button {
   -webkit-app-region: no-drag;
 }
+body {
+  -webkit-app-region: no-drag;
+}
 #titlebar {
   -webkit-user-select: none;
   -webkit-app-region: drag;
@@ -47,6 +50,9 @@ button {
 }
 .btn {
   float:right;
+}
+.dropdown-button{
+  -webkit-app-region: no-drag;
 }
 .progress{
   position: absolute;

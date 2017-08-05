@@ -10,7 +10,8 @@ electron.app.once('ready', function () {
 		height: 576,
 		resizable: false,
 		show: false,
-    frame: false
+    frame: false,
+    icon: path.join(__dirname, 'app', 'VKey.ico')
 	});
 	vKeyWindow.loadURL(url.format({
     	pathname: path.join(__dirname, 'app', 'index.html'),

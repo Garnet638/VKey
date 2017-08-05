@@ -1,8 +1,10 @@
 {
   "name": "VKey",
-  "version": "0.1.1",
+  "author": "Gabriel Ch",
+  "version": "1.0.0",
   "main": "index.js",
-  "dependencies": {
-
+  "license": "GPL-3.0+",
+  "devDependencies": {
+    "electron-packager": "^8.7.2"
   }
 }
